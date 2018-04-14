@@ -1,0 +1,16 @@
+{
+  "name": "book_notes",
+  "version": "0.0.1",
+  "description": "note taking app for books",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "AliLynne",
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "^5.1.0",
+    "mongoose": "^5.0.14",
+    "nodemon": "^1.17.3"
+  }
+}
