@@ -20,7 +20,12 @@ describe('Deleting a book', () => {
   })
 
   it('class method remove', () => {
-
+    Book.remove({ title: 'bookTest'})
+    .then(() => Book.findOne({ title: 'bookTest' }))
+      .then((book) => {
+        assert(book === null)
+        done()
+      })
   })
 
   it('class method findAndRemove', () => {
