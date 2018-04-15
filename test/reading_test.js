@@ -19,4 +19,12 @@ describe('Reading books out of the database', () => {
       })
   })
 
+  it('finds a user with a particular id', (done) => {
+    Book.findOne({ _id: testBook._id })
+      .then((book) => {
+        assert(book.title === 'testBook' )
+        done()
+      })
+  })
+
 })

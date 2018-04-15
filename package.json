@@ -4,7 +4,7 @@
   "description": "note taking app for books",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "nodemon --exec 'mocha -R min'"
   },
   "author": "AliLynne",
   "license": "MIT",
