@@ -19,7 +19,7 @@ describe('Deleting a book', () => {
       })
   })
 
-  it('class method remove', () => {
+  it('class method remove', (done) => {
     Book.remove({ title: 'bookTest'})
     .then(() => Book.findOne({ title: 'bookTest' }))
       .then((book) => {
@@ -28,11 +28,21 @@ describe('Deleting a book', () => {
       })
   })
 
-  it('class method findAndRemove', () => {
-
+  it('class method findAndRemove', (done) => {
+    Book.findOneAndRemove({ title: 'bookTest' })
+      .then(() => Book.findOne({ title: 'bookTest' }))
+      .then((book) => {
+        assert(book === null)
+        done()
+      })
   })
 
-  it('class method findByIdAndRemove', () => {
-
+  it('class method findByIdAndRemove', (done) => {
+    Book.findByIdAndRemove(testBook._id)
+      .then(() => Book.findOne({ title: 'bookTest' }))
+      .then((book) => {
+        assert(book === null)
+        done()
+      })
   })
 })
