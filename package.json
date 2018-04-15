@@ -1,16 +1,19 @@
 {
   "name": "book_notes",
   "version": "0.0.1",
-  "description": "note taking app for books",
-  "main": "index.js",
+  "description": "App for note taking",
+  "main": "app.js",
   "scripts": {
-    "test": "nodemon --exec 'mocha -R min'"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "AliLynne",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliLynne/book_notes.git"
+  },
+  "author": "",
   "license": "MIT",
-  "dependencies": {
-    "mocha": "^5.1.0",
-    "mongoose": "^5.0.14",
-    "nodemon": "^1.17.3"
-  }
+  "bugs": {
+    "url": "https://github.com/AliLynne/book_notes/issues"
+  },
+  "homepage": "https://github.com/AliLynne/book_notes#readme"
 }
