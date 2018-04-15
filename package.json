@@ -4,7 +4,8 @@
   "description": "App for note taking",
   "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "nodemon --exec 'mocha --recursive -R min'"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,10 @@
   "dependencies": {
     "express": "^4.16.3",
     "mocha": "^5.1.0",
-    "mongoose": "^5.0.14"
+    "mongoose": "^5.0.14",
+    "supertest": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
   }
 }
