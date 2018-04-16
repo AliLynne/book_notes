@@ -4,7 +4,9 @@ const routes = require('./routes/routes')
 const app = express()
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost/book_notes')
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect('mongodb://localhost/book_notes')
+}
 
 app.use(express.json())
 routes(app)
