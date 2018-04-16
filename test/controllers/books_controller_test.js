@@ -25,4 +25,37 @@ describe('Books controller', () => {
     })
     
   })
+
+  it('PUT to /api/books/id edits and existing book', done => {
+    const book = new Book({ title: 'Title Test', author: 'Test Author', read: false })
+
+    book.save().then(() => {
+      request(app)
+        .put(`/api/books/${book._id}`)
+        .send({ read: true })
+        .end(() => {
+          Book.findOne({ title: 'Title Test' })
+            .then(driver => {
+              assert(driver.read === true)
+              done()
+            })
+        })
+    })
+  })
+
+  it('DELETE to /api/books/id can delete a book', done => {
+    const book = new Book({ title: 'test book', author: 'test author'})
+
+    book.save().then(() => {
+      request(app)
+        .delete(`/api/books/${book._id}`)
+        .end(() => {
+          Book.findOne({ title: 'test book' })
+            .then((book) => {
+              assert(book === null)
+              done()
+            })
+        })
+    })
+  })
 })
