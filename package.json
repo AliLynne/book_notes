@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/AliLynne/book_notes#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "mocha": "^5.1.0",
     "mongoose": "^5.0.14",
